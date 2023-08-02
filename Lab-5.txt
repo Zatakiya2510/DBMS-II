@@ -1,0 +1,48 @@
+--1
+db.Deposite.find()
+--2
+db.Deposite.find().pretty()
+--3
+db.Deposite.findOne()
+--4
+db.Deposite.insertOne({ACTNO: 109,
+  CNAME: 'KIRTI',
+  BNAME: 'VIRAR',
+  AMOUNT: 3000,
+  ADATE: '3-5-97'
+})
+--5
+db.Deposite.insertMany([{ACTNO: 110,
+  CNAME: 'MITALI',
+  BNAME: 'ANDHERI',
+  AMOUNT: 4500,
+  ADATE: '4-9-95'
+},
+{
+  ACTNO: 111,
+  CNAME: 'RAJIV',
+  BNAME: 'NEHRU PLACE',
+  AMOUNT: 7000,
+  ADATE: '2-10-98'
+}])
+--6
+db.Deposite.find({} , {CNAME:1, BNAME:1, AMOUNT:1})
+--7
+db.Deposite.find().sort({CNAME:1})
+--8
+db.Deposite.find().sort({BNAME:-1})
+--9
+db.Deposite.find().sort({ACTNO:1, AMOUNT:-1})
+--10
+db.Deposite.find().limit(2)
+--11
+db.Deposite.find().skip(2).limit(1)
+--12
+db.Deposite.find().skip(5).limit(2)
+--13
+db.Deposite.find().count()
+--14
+db.Deposite.drop()
+--15
+db.dropDatabase()
+
